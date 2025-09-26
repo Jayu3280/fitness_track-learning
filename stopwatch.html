@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch | Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⏱ Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <div class="buttons">
+      <button class="start-btn" onclick="start()">Start</button>
+      <button class="stop-btn" onclick="stop()">Stop</button>
+      <button class="reset-btn" onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let timer = null;
+    let seconds = 0;
+
+    function updateDisplay() {
+      const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      document.getElementById('display').textContent = `${hrs}:${mins}:${secs}`;
+    }
+
+    function start() {
+      if (!timer) {
+        timer = setInterval(() => {
+          seconds++;
+          updateDisplay();
+        }, 1000);
+      }
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function reset() {
+      stop();
+      seconds = 0;
+      updateDisplay();
+    }
+
+    // Initialize display
+    updateDisplay();
+  </script>
+
+  <script src="stopwatch.js"></script>
+</body>
+</html>

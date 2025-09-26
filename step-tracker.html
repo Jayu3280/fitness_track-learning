@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Step Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2> <img src="/image/employee-working-promotion.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+      Step Tracker</h2>
+    <p>Steps: <span id="stepCount">0</span></p>
+    <button onclick="addStep()">+1 Step</button>
+    <button onclick="resetSteps()">Reset</button>
+  </div>
+  <script>
+    let steps = 0;
+    function addStep() {
+      steps++;
+      document.getElementById('stepCount').textContent = steps;
+    }
+    function resetSteps() {
+      steps = 0;
+      document.getElementById('stepCount').textContent = steps;
+    }
+  </script>
+</body>
+</html>

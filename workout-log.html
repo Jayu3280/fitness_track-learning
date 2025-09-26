@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workout Log</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Workout Log</h2>
+    <form id="logForm">
+      <input type="text" id="activity" placeholder="Workout (e.g. Yoga)" required>
+      <input type="number" id="duration" placeholder="Duration (mins)" required>
+      <button type="submit">Add Workout</button>
+    </form>
+    <ul id="logList"></ul>
+  </div>
+
+  <script>
+    document.getElementById("logForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const activity = document.getElementById("activity").value;
+      const duration = document.getElementById("duration").value;
+      const item = document.createElement("li");
+      item.textContent = `${activity} - ${duration} mins`;
+      document.getElementById("logList").appendChild(item);
+      this.reset();
+    });
+  </script>
+</body>
+</html>

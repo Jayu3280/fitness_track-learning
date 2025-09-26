@@ -1,62 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fitness Tracker</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <title>Fitness Tracker - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-  <header class="hero">
-    <div class="hero-content">
-      <h1><img src="/image/tracker.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
-      Track Your Fitness Journey</h1>
-      <p>Stay motivated. Log workouts. See progress.</p>
-      <a href="#log-workout" class="btn">Start Now</a>
-    </div>
-  </header>
-
-  <section class="features">
-    <div class="feature-card">
-      <img src="/image/time.png" alt="Easy Tracking" />
-      <h3>Easy Tracking</h3>
-      <p>Log your workouts quickly and easily.</p>
-    </div>
-    <div class="feature-card">
-      <img src="/image/analysis.png" alt="Analytics" />
-      <h3>Analytics</h3> 
-      <p>Visualize your progress over time.</p>
-    </div>
-    <div class="feature-card">
-      <img src="/image/motivation.png" alt="Motivation" />
-      <h3>Motivation</h3>
-      <p>Set goals, get reminders, feel encouraged.</p>
-    </div>
-  </section>
-
-  <section class="log-workout" id="log-workout">
-    <h2>Workout Log </h2>
-    <form id="workout-form">
-      <div class="form-group">
-        <input type="text" id="exercise" placeholder="Exercise (e.g. Running)" required />
-        <input type="number" id="duration" placeholder="Duration (mins)" required />
-        <input type="date" id="date" required />
-      </div>
-      <button type="submit" class="btn">Add Workout</button>
+  <div class="login-container">
+    <h2> <img src="/image/tracker.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+    Login to Fitness Tracker</h2>
+    <form onsubmit="return login()">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
     </form>
+  </div>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
-    <div class="workouts-container">
-      <!-- Logged workouts will appear here -->
-    </div>
-  </section>
-  
-
-  <footer class="footer">
-    <p>&copy; 2025 Fitness Tracker. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+      if (email && password) {
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Enter valid credentials");
+      }
+      return false;
+    }
+  </script>
 </body>
 </html>
