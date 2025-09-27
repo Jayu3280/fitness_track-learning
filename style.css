@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(105, 2, 146);
+  background-color: rgb(38, 4, 51);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -85,4 +85,27 @@ li {
   font-size: 40px;
   margin: 20px 0;
   font-weight: bold;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: rgb(167, 254, 7);
+
+}
+.hover-text:hover {
+  font-size: 1.5em;
+}
+
+.heartbeat-widget {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* Change to right: 20px; for upper right corner */
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
